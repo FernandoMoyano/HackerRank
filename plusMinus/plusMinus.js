@@ -27,6 +27,23 @@ function readLine() {
 
 function plusMinus(arr) {
   // Escribe tu código aquí
+  let positives = 0,
+    negatives = 0,
+    zero = 0;
+
+  for (let i = 0; i <= arr.length; i++) {
+    const element = arr[i];
+    if (element > 0) {
+      positives++;
+    } else if (element < 0) {
+      negatives++;
+    } else if (element === 0) {
+      zero++;
+    }
+  }
+  console.log((positives / arr.length).toFixed(6));
+  console.log((negatives / arr.length).toFixed(6));
+  console.log((zero / arr.length).toFixed(6));
 }
 
 function main() {
@@ -39,3 +56,5 @@ function main() {
 
   plusMinus(arr);
 }
+
+plusMinus([-4, 3, -9, 0, 4, 1]);

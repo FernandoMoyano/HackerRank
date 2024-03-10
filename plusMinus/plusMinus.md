@@ -1,6 +1,6 @@
-Dada una matriz de números enteros, calcula el radio de sus elementos que son positivos , negativos y cero . Imprima el valor decimal de cada fracción en una nueva línea conlugares después del decimal.
+Dada una matriz de números enteros, calcula el razon de sus elementos que son positivos , negativos y cero . Imprima el valor decimal de cada fracción en una nueva línea con lugares después del decimal.
 
-Nota: Este desafío introduce problemas de precisión. Los casos de prueba están escalados a seis decimales, aunque las respuestas con error absoluto de hasta son aceptables.
+Nota: Este desafío introduce problemas de precisión. Los casos de prueba están escalados a seis decimales, aunque las respuestas con error absoluto de hasta 10^-4 son aceptables.
 
 ### Ejemplo
 
@@ -44,12 +44,10 @@ arr[N]
 3-proporción de ceros
 Entrada de muestra:
 
-| STDIN              | FUNCTION                   |
-| ------------------ | -------------------------- |
-| 6                  | arr[]size n=6              |
-| ------------------ | --------------------       |
-| -4 3 -9 0 4 1      | arr = [-4, 3, -9, 0, 4, 1] |
-| ------------------ | -------------------------- |
+| STDIN         | FUNCTION                     |
+| ------------- | ---------------------------- |
+| 6             | `arr[]` size `n=6`           |
+| -4 3 -9 0 4 1 | `arr = [-4, 3, -9, 0, 4, 1]` |
 
 ### Salida de muestra
 
