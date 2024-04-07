@@ -5,30 +5,49 @@ Nota:-12:00:00 am en un reloj de 12 horas es 00:00:00 en un reloj de 24 horas.
 
 ### Example
 
-Return '12:01:00'.
+---
 
-Return '00:01:00'.
+s= "12:01:00PM"
+
+- Return '12:01:00'.
+
+s="12:01:00AM'
+
+- Return '00:01:00'.
 
 ### Function Description
 
+---
+
 Complete la función TimeConversion en el editor a continuación.Debería devolver una nueva cadena que represente el tiempo de entrada en formato de 24 horas.
 
-timeConversionTieneLosSiguientesParámetros:
+time Conversion Tiene Los Siguientes Parámetros:
 
-string s: a time in hour format
-Returns
+string s: un formato de hora en hora
 
-string: the time in hour format
-Input Format
+### Returns
 
-A single string that represents a time in -hour clock format (i.e.: or ).
+---
+
+string: la hora en formato de 24 horas.
+
+### Input Format
+
+---
+
+Una sola cadena que representa la hora en formato de reloj de 24 hs
+(i.e.: hh:mm:ssAN or hh:mm:ssPM ).
 
 ### Constraints
 
-All input times are valid
-Sample Input
+---
+
+Todos los tiempos de entrada son válidos
+
+- Sample Input
 
 07:05:45PM
-Sample Output
+
+- Sample Output
 
 19:05:45

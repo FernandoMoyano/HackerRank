@@ -30,8 +30,21 @@ function readLine() {
  */
 
 function timeConversion(s) {
-  // Write your code here
+  let [time, meridian] = s.split(/(?=[AP]M)/);
+  let [hour, minute, second] = time.split(":").map(Number);
+
+  if (meridian === "AM" && hour === 12) {
+    hour = 0;
+  } else if (meridian === "PM" && hour !== 12) {
+    hour += 12;
+  }
+
+  return `${hour.toString().padStart(2, "0")}:${minute
+    .toString()
+    .padStart(2, "0")}:${second.toString().padStart(2, "0")}`;
 }
+
+timeConversion("07:05:45PM");
 
 function main() {
   const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
