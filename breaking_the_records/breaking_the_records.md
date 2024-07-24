@@ -26,7 +26,7 @@ int scores[n]: puntos anotados por juego
 
 ### Returns
 
-int[2]: Una matriz con el número de veces que rompió sus registros.El índice es para romper la mayoría de los registros de puntos, y el índice es para romper los récords de puntos menos.
+int[2]: Una matriz con el número de veces que rompió sus registros.El índice 0 es para romper la mayoría de los registros de puntos, y el índice 1 es para romper los récords de puntos menos.
 
 ### Input Format
 
