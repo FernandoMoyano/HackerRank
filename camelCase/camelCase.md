@@ -34,7 +34,7 @@ S;V:marcoDeImagen
 vaso de plastico
 teléfonoMóvil
 MaquinaDeCafé
-gran libro de software
+libro de software grande
 hojaDePapelBlanca()
 marco de imagen
 
