@@ -6,10 +6,13 @@
 function processData(input) {
   //Enter your code here
   if (input.startsWith("S")) {
-    let newString = input.toLowerCase();
-    newString = newString.repleace([a - z]([A - Z]) / g, "$1 $2");
+    let newString = input.slice(4, input.length);
+    newString = newString.replace(/([a-z])([A-Z])/g, "$1 $2").toLowerCase();
+    return newString;
   }
 }
+
+console.log(processData("S;M:vasoDePlastico"));
 
 process.stdin.resume();
 process.stdin.setEncoding("ascii");
