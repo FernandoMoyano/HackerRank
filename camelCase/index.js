@@ -1,79 +1,66 @@
-//------------------SOLUCION 1------------------------
-// startsWith - includes - toLowercase - repleace
-//-----------------------------------------------------
-
-/* function processData(input) {
-  if (input.startsWith("S")) {
-    let newString = input.slice(4, input.length);
-    newString = newString.replace(/([a-z])([A-Z])/g, "$1 $2").toLowerCase();
-
-    return newString;
-  }
-}
- */
-
-//-----------------SOLUCION 2-----------------------
-//split - map - charAt - slice - toLowerCase - toUpperCase
-//--------------------------------------------------
-
 function processData(input) {
-  let [operation, rest] = input.split(";"); //<-- S M:vasoDePlastico()
-  let [type, words] = rest.split(":"); //<-- M vasoDePlastico()
-  let result = "";
+  let lines = input.trim().split("\n");
 
-  if (operation.startsWith("S")) {
-    let splitWords = "";
+  lines.forEach((line) => {
+    let [operation, type, text] = line.split(";");
 
-    for (let i = 0; i <= words.length; i++) {
-      const char = words[i];
-
-      if (char === "(" || char === ")") {
-        continue; //<-- ignorar parentesis en metodos
+    if (operation === "S") {
+      let result = "";
+      let isMethod = text.endsWith("()");
+      if (isMethod) {
+        text = text.slice(0, -2);
       }
 
-      if (char >= "A" && char <= "Z" && i > 0) {
-        splitWords += "" + char.toLowerCase();
-      } else {
-        splitWords += char;
+      for (let i = 0; i < text.length; i++) {
+        const char = text[i];
+        if (char === char.toUpperCase() && i > 0) {
+          result += " " + char.toLowerCase();
+        } else {
+          result += char;
+        }
       }
+
+      if (type === "C") {
+        result = result.charAt(0).toLowerCase() + result.slice(1);
+      }
+
+      if (isMethod) {
+        result = result.trim();
+      }
+
+      console.log(result.trim());
+    } else if (operation === "C") {
+      const wordsArray = text.split(" ");
+      let combined = "";
+
+      for (let i = 0; i < wordsArray.length; i++) {
+        const word = wordsArray[i];
+        if (type === "V") {
+          combined +=
+            i === 0
+              ? word.toLowerCase()
+              : word.charAt(0).toUpperCase() + word.slice(1);
+        } else if (type === "C") {
+          combined += word.charAt(0).toUpperCase() + word.slice(1);
+        } else if (type === "M") {
+          combined +=
+            i === 0
+              ? word.toLowerCase()
+              : word.charAt(0).toUpperCase() + word.slice(1);
+        }
+      }
+
+      if (type === "M") {
+        combined += "()";
+      }
+
+      console.log(combined);
     }
-    result = splitWords;
-  } else if (rest.startsWith("C")) {
-    const wordsArray = words.split("");
-    if (type === M) {
-      result = wordsArray.map((word, index) =>
-        index === 0
-          ? word.toLowerCase()
-          : word.charAt(0).toLowerCase + word.slice(1).join("") + "()"
-      );
-    } else if (type === "C") {
-      result = wordsArray.map(
-        (word) => word.charAt(0).toUpperCase() + word.slice(1).join("")
-      );
-    } else if (type === "V") {
-      result = wordsArray
-        .map((word, index) =>
-          index === 0
-            ? word.toLowerCase()
-            : word.charAt(0).toUpperCase() + word.slice(1)
-        )
-        .join("");
-    }
-  }
+  });
 }
-
-processData("S;M:vasoDePlastico()");
-
-/* console.log(processData("S;M:vasoDePlastico"));
-
-process.stdin.resume();
-process.stdin.setEncoding("ascii");
-_input = "";
-process.stdin.on("data", function (input) {
-  _input += input;
-});
-
-process.stdin.on("end", function () {
-  processData(_input);
-});
- */
+processData("S;M;plasticCup()");
+processData("C;V;mobile phone");
+processData("C;C;coffee machine");
+processData("S;C;LargeSoftwareBook");
+processData("C;M;white sheet of paper");
+processData("S;V;pictureFrame");

@@ -22,12 +22,12 @@ V indica variable
 
 - Para cada línea de entrada, su programa debe imprimir la lista de palabras delimitada por espacios (en el caso de una operación de división) o la cadena de mayúsculas y minúsculas apropiada (en el caso de una operación de combinación).
 
-S;M:vasoDePlastico()
-C;V:teléfono móvil
-C;C:maquina de café
-S;C:LibroDeSoftwareGrande
-C;M:hoja de papel blanca
-S;V:marcoDeImagen
+S;M;vasoDePlastico()
+C;V;teléfono móvil
+C;C;maquina de café
+S;C;LibroDeSoftwareGrande
+C;M;hoja de papel blanca
+S;V;marcoDeImagen
 
 ### Ejemplo de salida
 
