@@ -39,6 +39,26 @@ function processData(input) {
     }
     result = splitWords;
   } else if (rest.startsWith("C")) {
+    const wordsArray = words.split("");
+    if (type === M) {
+      result = wordsArray.map((word, index) =>
+        index === 0
+          ? word.toLowerCase()
+          : word.charAt(0).toLowerCase + word.slice(1).join("") + "()"
+      );
+    } else if (type === "C") {
+      result = wordsArray.map(
+        (word) => word.charAt(0).toUpperCase() + word.slice(1).join("")
+      );
+    } else if (type === "V") {
+      result = wordsArray
+        .map((word, index) =>
+          index === 0
+            ? word.toLowerCase()
+            : word.charAt(0).toUpperCase() + word.slice(1)
+        )
+        .join("");
+    }
   }
 }
 
