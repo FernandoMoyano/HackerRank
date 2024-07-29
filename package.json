@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/FernandoMoyano/HackerRank/issues"
   },
-  "homepage": "https://github.com/FernandoMoyano/HackerRank#readme"
+  "homepage": "https://github.com/FernandoMoyano/HackerRank#readme",
+  "devDependencies": {
+    "@types/node": "^22.0.0"
+  }
 }
