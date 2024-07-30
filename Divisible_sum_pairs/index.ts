@@ -26,17 +26,31 @@ function readLine(): string {
 /*
  * Complete the 'divisibleSumPairs' function below.
  *
- * The function is expected to return an INTEGER.
- * The function accepts following parameters:
+ * Se espera que la función devuelva un entero.
+ * La función acepta los siguientes parámetros:
  *  1. INTEGER n
  *  2. INTEGER k
  *  3. INTEGER_ARRAY ar
  */
 
 function divisibleSumPairs(n: number, k: number, ar: number[]): number {
-  // Write your code here
-  return 1;
+  let result: number = 0;
+  if (n >= 2 && k >= 1) {
+    for (let i = 0; i <= n; i++) {
+      for (let j = i + 1; j < n; j++) {
+        if ((ar[i] + ar[j]) % k === 0) {
+          result++;
+        }
+      }
+    }
+  } else {
+    console.log("n must be greater than 1");
+  }
+  console.log(result);
+  return result;
 }
+
+divisibleSumPairs(6, 3, [1, 3, 2, 6, 1, 2]);
 
 function main() {
   const outputPath = process.env["OUTPUT_PATH"];
